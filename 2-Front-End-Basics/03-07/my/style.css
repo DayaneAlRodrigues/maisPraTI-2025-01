@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Jacques+Francois+Shadow&family=Kadwa:wght@400;700&display=swap');
+
+:root {
+    --color-primaria: #424659;
+    --color-secundaria: #2b387c;
+
+    --bg-primaria : #FFDCDC;
+    --bg-secundaria: #FFF2EB;
+    --bg-terciaria: #FFE8CD;
+    --bg-hover:  #FFD6BA;
+
+    --font-primaria:'Kadwa', sans-serif;
+    --font-secundaria: "Itim", serif;
+    --font-terciaria: "Jacques Francois Shadow", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-primaria);
+    color: var(--color-primaria);
+    background-color: var(--bg-terciaria);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-secundaria);
+    color: var(--color-secundaria);
+}
+
+.nav {
+    display: flex;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+.nav li +li {
+    margin-left: 1rem;
+}   
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-secundaria);
+    align-items: flex-end;
+}
