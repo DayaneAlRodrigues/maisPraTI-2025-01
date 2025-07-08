@@ -90,3 +90,20 @@ function renderizar() {
 
 // This ensures renderizar() runs only after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", renderizar);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.toggle('open');
+    })
+})
+
+const arrow = document.getElementById('arrow');
+arrow.addEventListener('click', () => {
+    window.scrollTo({
+        top:0,
+        behavior: 'smooth'
+    })
+});

@@ -41,6 +41,35 @@ header{
     padding-left: 2rem;
     padding-top: 1rem;
 }
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+@media(max-width: 462px) {
+    .nav {
+        position: none;
+        left: 0;
+        right: 0;
+        background: var(--color-primaria);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+    }
+
+    .nav.open {
+        max-height: 200px;
+    }
+
+    .nav-toggle {
+        display: block;
+        float:right;
+    }
+}
 .nav {
     display: flex;
     justify-content: flex-end;
@@ -228,9 +257,19 @@ textarea{
     background-color: var(--color-secundaria);
 }
 
+/* ARROW BUTTON */
+.arrow {
+    background-color: var(--color-primaria);
+    border: none;
+    float: right;
+    border-radius: 5px;
+
+}
+
 /* FOOTER */
 footer{
     background-color: var(--color-terciaria);
     text-align: center;
     padding: 1rem;
+    
 }
