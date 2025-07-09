@@ -259,11 +259,10 @@ textarea{
 
 /* ARROW BUTTON */
 .arrow {
+    
     background-color: var(--color-primaria);
     border: none;
     float: right;
-    border-radius: 5px;
-
 }
 
 /* FOOTER */

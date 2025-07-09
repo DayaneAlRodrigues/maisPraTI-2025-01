@@ -107,3 +107,42 @@ arrow.addEventListener('click', () => {
         behavior: 'smooth'
     })
 });
+
+const cep = document.getElementById('cep');
+const rua = document.getElementById('rua');
+const number = document.getElementById('number');
+const bairro = document.getElementById('bairro');
+const city = document.getElementById('city');
+const uf = document.getElementById('uf');
+
+
+async function consultarCep(){
+
+    const cepValue = cep.value;
+    const url = ` viacep.com.br/ws/${encodeURIComponent(cepValue)}/json/ `
+    try {
+        const response = await fetch(url, {method:'GET'});
+        const data = await response.json();
+        
+        divResultado.innerHTML = `
+                <h2>Endereço Encontrado:</h2>
+                <ul>
+                    <li>CEP: ${data.cep}</li>  
+                    <li>Logradouro: ${data.logradouro}</li>  
+                    <li>Complemento: ${data.complemento}</li>
+                    <li>Bairro: ${data.bairro}</li>
+                    <li>Cidade: ${data.localidade}</li>
+                    <li>Estado: ${data.uf}</li>
+                </ul>`
+        /*
+        rua.innerHTML = data.logradouro;
+        number.innerHTML = data.complemento;
+        bairro.innerHTML = data.bairro;
+        city.innerHTML = data.localidade;
+        uf.innerHTML = data.uf;
+        */
+    } catch (err) {
+        cep.innerHTML = "Cep inválido";
+    }
+}
+cep.addEventListener('input', consultarCep());
